@@ -314,6 +314,25 @@ ul{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     border: 5px solid var(--clr-primary);
     border-radius: 20px;
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: all .5s linear;
+}
+
+#about .about-content .col-left .about-img.scroll{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#about .about-content .col-right .about-col{
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all .3s linear;
+}
+
+#about .about-content .col-right .about-col.scroll{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #about .about-content .col-right .about-col:not(:first-child){
@@ -354,8 +373,7 @@ ul{
 
 #about .about-content .col-right .about-col .skills-col ul li{
     display:flex;
-    align-items: flex-start;
-
+    align-items: flex-start;;
 }
 
 #about .about-content .col-right .about-col .skills-col ul li .bx{
@@ -377,6 +395,14 @@ ul{
 
 #work .work-content .col-work{
     margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all .5s linear;
+}
+
+#work .work-content .col-work.scroll{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #work .work-content .work-link .col-content{
@@ -414,6 +440,10 @@ ul{
     transition: all .3s linear;
 }
 
+.dark-mode #work .work-content .work-link .col-content .overlay{
+    color: var(--clr-font);
+}
+
 #work .work-content .work-link:hover .col-content .overlay{
     bottom: 0;
 }
@@ -430,6 +460,11 @@ ul{
     left: 50%;
     transform: translateX(-50%);
     margin-bottom: 10px;
+    
+}
+
+.dark-mode #work .work-content .work-link .col-content .overlay .overlay-title::after{
+    background-color: var(--clr-font);
     
 }
 
@@ -713,6 +748,13 @@ ul{
     #about .about-content .col-left .about-img{
         width: 50%;
         border: 3px solid var(--clr-primary);
+        transform: translateX(0) translateY(-50px);
+    }
+
+    #about .about-content .col-left .about-img{
+        width: 50%;
+        border: 3px solid var(--clr-primary);
+        transform: translateX(0) translateY(0);
     }
 
     #about .about-content .col-right .about-col:not(:first-child){
