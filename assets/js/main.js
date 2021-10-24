@@ -3,7 +3,6 @@ $(document).ready(function(){
 
     $('.btn-theme').on('click', function(){
         $('.btn-theme').toggleClass('dark-mode');
-        // $('.body').toggleClass('dark-mode');
     });
 
 });
@@ -33,6 +32,33 @@ darkModeToggle.addEventListener("click", () => {
         enableDarkMode();
     }else {
         disableDarkMode();
+    }
+
+});
+
+// Parallax Effect
+
+$(window).scroll(function () {
+    let wScroll = $(this).scrollTop();
+
+    // Work Section Parallax
+
+    if (wScroll > $("#work").offset().top - 100 ) {
+        $("#work .col-work").each(function (i) {
+            setTimeout(function () {
+                $("#work .col-work").eq(i).addClass("scroll");
+            }, 300 * i);
+        });
+    }
+
+    if (wScroll > $("#about").offset().top - 100 ) {
+        $("#about .about-col").each(function (i) {
+            setTimeout(function () {
+                $("#about .about-col").eq(i).addClass("scroll");
+            }, 300 * i);
+        });
+
+        $("#about .about-img").addClass("scroll");
     }
 
 });
